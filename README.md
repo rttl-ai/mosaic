@@ -19,19 +19,11 @@ This repository accompanies the paper:
 * Weight Tying: Shares weights between input embeddings and MLM prediction head for parameter efficiency
 * Flexible Configuration: Easy-to-modify YAML configs for different domains and training setups
 
-## Code Structure
-
-This repository is based on the open-source
-[`contrastors`](https://github.com/nomic-ai/contrastors) framework and contains
-a small number of targeted modifications required to implement MOSAIC.
-
-
 ## Usage (forthcoming)
 
-1. Install dependencies following the original `contrastors` instructions.
+1. Install dependencies following the original [`contrastors`](https://github.com/nomic-ai/contrastors) instructions.
 2. Use the configuration files provided in `configs/`.
-3. Data format follows the contrastors repo`.
-
+3. Data format follows the contrastors repo.
 
 ## Quick Start
 
