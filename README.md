@@ -19,7 +19,7 @@ This repository accompanies the paper:
 * Weight Tying: Shares weights between input embeddings and MLM prediction head for parameter efficiency
 * Flexible Configuration: Easy-to-modify YAML configs for different domains and training setups
 
-## Usage (forthcoming)
+## Usage
 
 1. Install dependencies following the original [`contrastors`](https://github.com/nomic-ai/contrastors) instructions.
 2. Use the configuration files provided in `configs/`.
