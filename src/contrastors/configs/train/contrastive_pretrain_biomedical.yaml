@@ -1,0 +1,53 @@
+train_args:
+  num_epochs: 1
+  learning_rate: 1.0e-5
+  weight_decay: 0.01
+  warmup_steps: 7000
+  cooldown_steps: null
+  wandb: true
+  wandb_run_name: "MOSAIC"
+  wandb_project_name: "contrastive-training"
+  wandb_entity: "<your-wandb-username>"
+  log_grads_every: 100
+  log_lr_every: 10
+  save_every: 50000 
+  chunk_size: 256
+  output_dir: "ckpts/contrastive-MLM"
+  schedule_type: "cosine"
+  max_grad_norm: 1.0
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  grad_cache: false
+  loss_fn: "clip"
+  use_fp8: false
+  clamp_logits: false
+  logit_max: 100
+  mlm_weight: 0.3
+  mlm: true
+  
+model_args:
+  logit_scale: 50
+  trainable_logit_scale: false
+  model_type: "encoder"
+  seq_len: 256
+  pooling: "mean"
+  nomic_encoder: true
+  add_prefix: true
+  num_negatives: 0
+  tokenizer_name: "<path-to-tokenizer>"  # e.g., "bert-base-uncased" or "/path/to/local/tokenizer"
+  model_name: "<path-to-pretrained-encoder>"  # e.g., "nomic-ai/nomic-embed-text-v1" or "/path/to/local/model"
+  pretrained: true
+  gradient_checkpointing: false
+  domain_token_ids_path: "<path-to-domain-token-ids>/domain_token_ids.json"  # JSON file with list of domain-specific token IDs
+
+data_args:
+  input_shards: "configs/data/contrastive_pretrain.yaml"  # path to data config YAML
+  workers: 12 
+  batch_size: 256
+  seed: 42
+  shuffle: false
+  download: true
+  query_max_length: 64
+  document_max_length: 256
+  mlm_prob: 0.15
+  domain_token_ids_path: "<path-to-domain-token-ids>/domain_token_ids.json"  # same as model_args.domain_token_ids_path
