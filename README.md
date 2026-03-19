@@ -86,18 +86,9 @@ This repository is based on the open-source [contrastors](https://github.com/nom
 
 ---
 
-## Citation
-```bibtex
-@misc{pavlova2026mosaicmaskedobjectiveselective,
-      title={MOSAIC: Masked Objective with Selective Adaptation for In-domain Contrastive Learning}, 
-      author={Vera Pavlova and Mohammed Makhlouf},
-      year={2026},
-      eprint={2510.16797},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2510.16797}, 
-}
-```
+## Pretrained Models
+
+[MOSAIC-embed-biomed](https://huggingface.co/rttl-ai/MOSAIC-embed-biomed)
 
 ---
 
